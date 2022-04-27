@@ -9,7 +9,7 @@ project.afterEvaluate {
     publishToMavenLocal {
         def groupId = 'it.rubenspischedda.jitpackable'
         def artifactId = 'materialnumberpicker'
-        def versionName = "1.2.5"
+        def versionName = "1.2.1"
         publishing {
             publications {
                 LibraryRelease(MavenPublication) {
