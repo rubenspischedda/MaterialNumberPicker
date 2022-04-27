@@ -7,9 +7,9 @@ android {
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 30
         versionCode 1
-        versionName "1.2.1"
+        versionName "1.2.8"
     }
     buildTypes {
         release {
@@ -21,6 +21,15 @@ android {
     afterEvaluate {
         publishing {
             publications {
+                mavenJava(MavenPublication) {
+                    // Applies the component for the release build variant.
+                    from components.release
+
+                    // You can then customize attributes of the publication as shown below.
+                    groupId = "it.rubenspischedda"
+                    artifactId = 'materialnumberpicker'
+                    version = "1.2.1"
+                }
                 // Creates a Maven publication called "release".
                 release(MavenPublication) {
                     // Applies the component for the release build variant.
